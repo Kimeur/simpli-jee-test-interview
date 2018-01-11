@@ -18,10 +18,9 @@ public class Main {
         System.out.println("Enter your text : ");
         final String input = scanInput.nextLine();
         scanInput.close();
-
         final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
         final SmpDataTransformer transformer = new SmpDataTransformer(validator);
-        final String transformedInput = transformer.transform(input);
+        final String transformedInput = transformer.transform(input,localeRead);
         System.out.println(transformedInput);
     }
 }
