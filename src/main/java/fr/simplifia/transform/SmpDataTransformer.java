@@ -13,20 +13,18 @@ public class SmpDataTransformer {
     public SmpDataTransformer(final SmpInputValidator validator) {
         this.validator = validator;
     }
-
     public String transform(final String input, final String locale){
         validator.validateInput(input);
         final StringBuffer buffer = new StringBuffer();
-        buffer.append(input);
         final String cleanedLocale = StringUtils.trim(locale).toLowerCase();
-        final String cleanedInput = StringUtils.stripAccents(input);
-        System.out.println(cleanedInput);
-
         switch (cleanedLocale) {
             case "fr":
+                buffer.append(input);
                 buffer.append(MESSAGE);
                 break;
             case "en":
+                final String cleanedInput = StringUtils.stripAccents(input);
+                buffer.append(cleanedInput);
                 buffer.append(MESSAGE_EN);
                 break;
         }
