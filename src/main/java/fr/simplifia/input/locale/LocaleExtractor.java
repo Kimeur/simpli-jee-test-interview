@@ -1,12 +1,12 @@
 package fr.simplifia.input.locale;
 
 import fr.simplifia.input.exception.InputException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
 import java.util.Objects;
 
-import static org.apache.commons.lang.StringUtils.isEmpty;
+import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 public class LocaleExtractor {
 
@@ -17,7 +17,6 @@ public class LocaleExtractor {
         if (!localeIsValid(result)) {
             throw new InputException("given Locale is not handled");
         }
-
         return result;
     }
 

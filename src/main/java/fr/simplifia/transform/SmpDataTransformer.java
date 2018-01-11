@@ -1,6 +1,7 @@
 package fr.simplifia.transform;
 
 import fr.simplifia.input.validator.SmpInputValidator;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
 
@@ -15,10 +16,13 @@ public class SmpDataTransformer {
 
     public String transform(final String input, final String locale){
         validator.validateInput(input);
-
         final StringBuffer buffer = new StringBuffer();
         buffer.append(input);
-        switch (locale) {
+        final String cleanedLocale = StringUtils.trim(locale).toLowerCase();
+        final String cleanedInput = StringUtils.stripAccents(input);
+        System.out.println(cleanedInput);
+
+        switch (cleanedLocale) {
             case "fr":
                 buffer.append(MESSAGE);
                 break;
