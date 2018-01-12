@@ -1,5 +1,7 @@
 package fr.simplifia.input.locale;
 
+import fr.simplifia.input.exception.InputException;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Locale;
@@ -15,16 +17,17 @@ public class LocaleExtractorTest {
 
     @Test //TODO
     public void testToLocaleEn() throws Exception {
+        assertEquals(Locale.ENGLISH, LocaleExtractor.toLocale("en"));
     }
 
     @Test(expectedExceptions = NullPointerException.class)
     public void testToLocaleNull() throws Exception {
-        LocaleExtractor.toLocale(null);
+        assertEquals(null,LocaleExtractor.toLocale(null));
     }
 
-    @Test //TODO
+    @Test//TODO
     public void testToLocaleNEmpty() throws Exception {
-
+        //assertNotEquals("", LocaleExtractor.toLocale("de"));
     }
 
 

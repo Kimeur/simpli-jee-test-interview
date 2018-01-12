@@ -24,6 +24,7 @@ public class SmpOutputWriterImplTest {
     //TODO
     @Test
     public void testPrint() throws Exception {
+
     }
 
     //TODO

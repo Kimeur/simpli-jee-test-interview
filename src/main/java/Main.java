@@ -14,7 +14,6 @@ public class Main {
         final String localeRead = scanInput.nextLine();
         final Locale locale = LocaleExtractor.toLocale(localeRead);
 
-
         System.out.println("Enter your text : ");
         final String input = scanInput.nextLine();
         scanInput.close();
